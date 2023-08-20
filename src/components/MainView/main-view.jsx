@@ -17,7 +17,7 @@ export const MainView = () => {
       {
         id: 2,
         title: "The Rocketeer",
-        image: " ",
+        image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-MTS8bU1LallUVaHtiEpNgg3ug-rPTeTlTUKVs8bvnSc3vuOa",
         description:
           "An action film is built around the main character being thrust into a series of events which involve voilence, explosions and  chases.",
         genre: "Action",
@@ -27,7 +27,7 @@ export const MainView = () => {
       {
         id: 3,
         title: "Dick Tracy",
-        image: " ",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/de/Dicktracy1238.jpg",
         description:
           "Detective Dick Tracy is trying to find evidence to put the city's crime boss, Big Boy Caprice, away for good.",
         genre: "Action",

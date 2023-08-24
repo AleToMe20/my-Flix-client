@@ -27332,7 +27332,7 @@ const MainView = ()=>{
         {
             id: 3,
             title: "Dick Tracy",
-            image: "https://upload.wikimedia.org/wikipedia/en/d/de/Dicktracy1238.jpg",
+            image: "",
             description: "Detective Dick Tracy is trying to find evidence to put the city's crime boss, Big Boy Caprice, away for good.",
             genre: "Action",
             director: "Warren Beatty"
@@ -27371,7 +27371,7 @@ const MainView = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "sAL/kHK8GW6sIi2TDHXvIqbgDVQ=");
+_s(MainView, "YJhZ5zogyC5AnOluBfjfOWXYJms=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");

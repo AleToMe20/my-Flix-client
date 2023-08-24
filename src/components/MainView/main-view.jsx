@@ -4,36 +4,22 @@ import { MovieView } from "../MovieView/movie-view.jsx";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([
-    {
-        id: 1,
-        title: "Wonder Women",
-        image: "https://upload.wikimedia.org/wikipedia/en/9/93/Wonder_Woman.jpg",
-        description:
-          "A pilot crashes on a mysterious island and one of the Amazonian women there goes with him back to England to help them fight in the war.",
-        genre: "Adventure",
-        director: "Patty Jenkins",
-      },
+    useEffect(() => {
+      fetch("https://my-flix-host.onrender.com")
+        .then((response) => response.json())
+        .then((data) => {
+          const moviesFromApi = data.docs.map((doc) => {
+            return {
+              id: doc.key,
+              title: doc.title,
+              image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
+              author: doc.author_name?.[0]
+            };
+          });
   
-      {
-        id: 2,
-        title: "The Rocketeer",
-        image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-MTS8bU1LallUVaHtiEpNgg3ug-rPTeTlTUKVs8bvnSc3vuOa",
-        description:
-          "An action film is built around the main character being thrust into a series of events which involve voilence, explosions and  chases.",
-        genre: "Action",
-        director: "Joe Johnston",
-      },
-  
-      {
-        id: 3,
-        title: "Dick Tracy",
-        image: "https://upload.wikimedia.org/wikipedia/en/d/de/Dicktracy1238.jpg",
-        description:
-          "Detective Dick Tracy is trying to find evidence to put the city's crime boss, Big Boy Caprice, away for good.",
-        genre: "Action",
-        director: "Warren Beatty",
-    }
-  ]);
+          setMovies(booksFromApi);
+        });
+    }, []);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 

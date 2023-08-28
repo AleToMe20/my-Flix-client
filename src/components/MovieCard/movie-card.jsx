@@ -5,7 +5,7 @@ export const MovieCard = ({ book, onMovieClick }) => {
   return (
     <div
       onClick={() => {
-        onBookClick(movie);
+        onMovieClick(movie);
       }}
     >
       {movie.title}
@@ -16,7 +16,7 @@ export const MovieCard = ({ book, onMovieClick }) => {
 // Here is where we define all the props constraints for the MovieCard
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    title: PropTypes.string
+    title: PropTypes.string.isRequired,
   }).isRequired,
-  onBookClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func.isRequired
 };

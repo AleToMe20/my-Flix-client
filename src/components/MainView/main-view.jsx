@@ -6,21 +6,26 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  useEffect(() => { // Use useEffect to fetch movie data
-    fetch("https://my-flix-host.onrender.com/movies")
-      .then((response) => response.json())
+  useEffect(() => {
+    // Use useEffect to fetch movie data
+    fetch("https://my-flix-host.onrender.com/movies", {
+      mode: 'no-cors'  // Set to no-cors mode
+    })
       .then((data) => {
-        const moviesFromApi = data.docs.map((doc) => ({
-          id: doc.key,
-          title: doc.title,
-          image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
-          author: doc.author_name?.[0],
+        const moviesFromApi = data.map((movie) => ({
+          id: movie._id, // Assuming '_id' exists in your movie objects
+          title: movie.Title,
         }));
-
-        setMovies(moviesFromApi);
-      });
-  }, []); // Empty dependency array, runs once on component mount
   
+        setMovies(moviesFromApi);
+      })
+      .catch((error) => {
+        console.error('There was an error fetching the movies:', error);
+      });
+  }, []);
+
+console.log(movies);
+
   if (selectedMovie) {
     return (
       <MovieView 

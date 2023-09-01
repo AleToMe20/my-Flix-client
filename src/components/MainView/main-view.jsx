@@ -7,15 +7,16 @@ export const MainView = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
-    // Use useEffect to fetch movie data
-    fetch("https://my-flix-host.onrender.com/movies", {
-      mode: 'no-cors'  // Set to no-cors mode
-    })
+    fetch("https://my-flix-host.onrender.com/movies")
+      .then((response) => response.json())
       .then((data) => {
-        const moviesFromApi = data.map((movie) => ({
-          id: movie._id, // Assuming '_id' exists in your movie objects
-          title: movie.Title,
-        }));
+        const moviesFromApi = data.map((movie) => {
+          return {
+            id: movie._id,
+            title: movie.title,
+            
+          };
+        });
   
         setMovies(moviesFromApi);
       })

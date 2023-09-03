@@ -27180,7 +27180,7 @@ const MainView = ()=>{
         fetch("https://my-flix-host.onrender.com/movies").then((response)=>response.json()).then((data)=>{
             const moviesFromApi = data.map((movie)=>{
                 return {
-                    id: movie.id,
+                    _id: movie._id,
                     title: movie.title,
                     image: movie.image,
                     description: movie.description,
@@ -27189,7 +27189,8 @@ const MainView = ()=>{
                     },
                     director: {
                         name: movie.director.name
-                    }
+                    },
+                    releaseYear: movie.releaseYear
                 };
             });
             setMovies(moviesFromApi);

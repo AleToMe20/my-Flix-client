@@ -1,11 +1,12 @@
 import{ useState } from "react";
+import PropTypes from "prop-types";
 
 export const SignupView = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -77,3 +78,4 @@ export const SignupView = () => {
       </form>
     );
   };
+  SignupView.propTypes = {};

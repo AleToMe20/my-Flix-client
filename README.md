@@ -23,3 +23,6 @@ Contribution
 Contributions to this repository are welcome. If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 Feedback
+
+6.09.23
+- Added loginview, signupview, updated mainview to accomodate for logins, signups, jwt tokens and local storage. 

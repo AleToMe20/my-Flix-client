@@ -14,7 +14,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Password: password
     };
 
-    fetch("https://my-flix-host.onrender.com/movies", {
+    fetch("https://my-flix-host.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -58,5 +58,5 @@ export const LoginView = ({ onLoggedIn }) => {
   );
 };
 LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired,
+  onLoggedIn: PropTypes.func.isRequired, //just addin a comment so I can commit
 };

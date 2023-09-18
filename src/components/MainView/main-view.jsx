@@ -14,7 +14,7 @@ export const MainView = () => {
 
 
   useEffect(() => {
-    if (!token) { //if theres no token, dont execute the rest
+    if (token) { //if theres no token, dont execute the rest
 
     fetch("https://my-flix-host.onrender.com/movies", {
       headers: { Authorization: `Bearer ${token}` }
@@ -56,6 +56,8 @@ if (!user) {
       onLoggedIn={(user, token) => {
         setUser(user); //if the login was successful, set the user so useState isnt null
         setToken(token); //set the token as well
+        localStorage.setItem('token',token);
+        localStorage.setItem('user', JSON.stringify(user));
       }}
     />
     or
@@ -68,6 +70,7 @@ return (
     <button
       onClick={() => {
         setUser(null);
+        localStorage.clear();
       }}
     >
       Logout

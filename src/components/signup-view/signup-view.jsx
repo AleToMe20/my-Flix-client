@@ -12,10 +12,10 @@ export const SignupView = () => {
 
         //data to place in
         const data = {
-          username: username,
-          password: password,
-          email: email,
-          birthday: birthday
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday
         };
 
         fetch("https://my-flix-host.onrender.com/users", {

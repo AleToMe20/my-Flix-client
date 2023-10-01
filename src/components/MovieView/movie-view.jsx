@@ -3,36 +3,19 @@ import './movie-view.scss';
 
 export const MovieView = ({ movie, onBackClick }) => {
   return (
-    <div>
-      <div>
-      <img src={movie.image} className='w-100' />
-      </div>
-      <div>
-        <span>Title: </span>
-        <span>{movie.title}</span>
-      </div>
-      <div>
-        <span>Description: </span>
-        <span>{movie.description}</span>
-      </div>
-      <div>
-        <span>Genre: </span>
-        <span>{movie.genre.name}</span>
-      </div>
-      <div>
-        <span>Director: </span>
-        <span>{movie.director.name}</span>
-      </div>
-                  <button
-                onClick={onBackClick}
-                className='back-button'
-                style={{ cursor: 'pointer' }}
-            >
-                Back
-            </button>
-    </div>
-  );
-};
+    <Card border="primary" className="movieCard">
+    <Card.Img height="30%" className="object-fit-cover flex-fill" src={movie.image}/>
+    <Card.Body>
+        <Card.Title>Title: {movie.title}<br/></Card.Title>
+        <Card.Text>
+           Description: {movie.description}<br/>
+           Director: {movie.director.name}<br/>
+           Genre: {movie.genre.name}<br/>
+        </Card.Text>
+        <Button variant='primary' onClick={onBackClick}>Back</Button>
+    </Card.Body>
+</Card>);
+}
 
 // Define PropTypes for MovieView component
 MovieView.propTypes = {

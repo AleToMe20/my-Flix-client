@@ -43,7 +43,6 @@ export const MainView = () => {
         setMovies(moviesFromApi);
       })
 
-
       .catch((error) => {
         console.error('There was an error fetching the movies:', error);
       });
@@ -80,7 +79,7 @@ console.log(movies);
             ) : (
                 <>
                     {movies.map((movie) => (
-                        <Col className='mb-5' key={movie.id} md={3}>
+                        <Col className='mb-5' key={movie.id} s={1} md={4} l={3} xl={2}>
                             <MovieCard
                                 movie={movie}
                                 onMovieClick={(newSelectedMovie) => {

@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/alex.medgett/.nvm/versions/node/v16.20.2/bin/node /opt/homebrew/bin/yarn start
+
+PATH: 
+  /Users/alex.medgett/.nvm/versions/node/v16.20.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/alex.medgett/.nvm/versions/node/v16.20.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.20.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/alex.medgett/Desktop/cf/my-Flix-client/package.json: Unexpected token } in JSON at position 422
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "package.json",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bootstrap": "5.2.0",
+      "cors": "^2.8.5",
+      "parcel": "^2.9.3",
+      "prop-types": "^15.8.1",
+      "react": "^18.2.0",
+      "react-bootstrap": "2.5.0",
+      "react-dom": "^18.2.0",
+      "react-scripts": "4.0.0",
+    },
+    "devDependencies": {
+      "@parcel/transformer-sass": "^2.9.3",
+      "process": "^0.11.10"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

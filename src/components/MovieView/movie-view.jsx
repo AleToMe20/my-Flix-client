@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import './movie-view.scss';
+import {Card, Button} from "react-bootstrap";
 
 export const MovieView = ({ movie, onBackClick }) => {
   return (

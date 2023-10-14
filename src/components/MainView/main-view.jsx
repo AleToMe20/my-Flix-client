@@ -42,17 +42,6 @@ export const MainView = () => {
       });
   }, []);
 
-  console.log(movies);
-
-  if (selectedMovie) {
-    return (
-      <MovieView
-        movie={selectedMovie}
-        onBackClick={() => setSelectedMovie(null)}
-      />
-    );
-  }
-
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }

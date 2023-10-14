@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../MovieCard/movie-card.jsx";
 import { MovieView } from "../MovieView/movie-view.jsx";
-import { LoginView } from "../login-view/login-view";
-import { SignupView } from "../signup-view/signup-view";
-import { NavigationBar } from "../navigation-bar/navigation-bar";
-import { ProfileView } from "../profile-view/profile-view";
+import { LoginView } from "../login-view/login-view.jsx";
+import { SignupView } from "../signup-view/signup-view.jsx";
+import { NavigationBar } from "../navigation-bar/navigation-bar.jsx";
+import { ProfileView } from "../profile-view/profile-view.jsx";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./main-view.scss";

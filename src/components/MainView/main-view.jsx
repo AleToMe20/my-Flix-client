@@ -16,8 +16,17 @@ export const MainView = () => {
   const storedToken = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("https://my-flix-host.onrender.com/movies")
-      .then((response) => response.json())
+    fetch("https://my-flix-host.onrender.com/movies", {
+      headers: {
+        Authorization: `Bearer ${storedToken}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Unauthorized"); // Throw an error for unauthorized requests
+        }
+        return response.json();
+      })
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
           return {
@@ -36,15 +45,16 @@ export const MainView = () => {
         });
         setMovies(moviesFromApi);
       })
-
       .catch((error) => {
-        console.error("There was an error fetching the movies:", error);
+        console.error("Error fetching movies:", error.message);
       });
   }, []);
-
+  console.log("Token:", storedToken);
+  
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
+  
 
   return (
     <BrowserRouter>
@@ -104,7 +114,7 @@ export const MainView = () => {
                   <Col>The list is apparently empty!</Col>
                 ) : (
                   <Col md={8}>
-                    <MovieView movies={movies} />
+                    <MovieView movie={movies} />
                   </Col>
                 )}
               </>
@@ -149,7 +159,7 @@ export const MainView = () => {
                       user={user}
                       token={token}
                       setUser={setUser}
-                      movies={movies}
+                      movie={movies}
                     />
                   </Col>
                 )}

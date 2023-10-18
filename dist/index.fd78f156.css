@@ -36,6 +36,20 @@
   padding-left: 0 !important;
 }
 
+.delete-button {
+  text-align: right;
+  padding-top: 40px;
+}
+
+.save-button {
+  padding-top: 32px;
+}
+
+.favorite-title {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
 .movie-view {
   background-color: #0ff;
   padding-top: 50px;
@@ -72,20 +86,6 @@
 
 .custom-link-button {
   padding-left: 0 !important;
-}
-
-.delete-button {
-  text-align: right;
-  padding-top: 40px;
-}
-
-.save-button {
-  padding-top: 32px;
-}
-
-.favorite-title {
-  padding-top: 50px;
-  padding-bottom: 25px;
 }
 
 .my-flix {

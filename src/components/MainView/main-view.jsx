@@ -5,7 +5,8 @@ import { LoginView } from "../login-view/login-view.jsx";
 import { SignupView } from "../signup-view/signup-view.jsx";
 import { NavigationBar } from "../navigation-bar/navigation-bar.jsx";
 import { ProfileView } from "../profile-view/profile-view.jsx";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./main-view.scss";
 
@@ -13,7 +14,9 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const storedUser = JSON.parse(localStorage.getItem("user"));
+  const [user, setUser] = useState(storedUser);
   const storedToken = localStorage.getItem("token");
+  const [token, setToken] = useState(storedToken);
 
   useEffect(() => {
     fetch("https://my-flix-host.onrender.com/movies", {
@@ -50,11 +53,6 @@ export const MainView = () => {
       });
   }, []);
   console.log("Token:", storedToken);
-  
-  if (movies.length === 0) {
-    return <div>The list is empty!</div>;
-  }
-  
 
   return (
     <BrowserRouter>
@@ -94,6 +92,7 @@ export const MainView = () => {
                   <Col md={5}>
                     <LoginView
                       onLoggedIn={(user, token) => {
+                        console.log('HERE', user, token)
                         setUser(user);
                         setToken(token);
                       }}

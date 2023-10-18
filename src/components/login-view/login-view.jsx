@@ -35,6 +35,7 @@ export const LoginView = ({ onLoggedIn }) => {
         }
       })
       .catch((e) => {
+        console.error(e);
         alert("Something went wrong");
       });
     };
@@ -43,7 +44,7 @@ export const LoginView = ({ onLoggedIn }) => {
       <Form onSubmit={handleSubmit}>
 
           <Form.Group controlId='formUsername'>
-              <Form.Label>Username: </Form.Label>
+              <Form.Label>Username:</Form.Label>
               <Form.Control
                   type='text'
                   value={username}
@@ -54,7 +55,7 @@ export const LoginView = ({ onLoggedIn }) => {
           </Form.Group>
 
           <Form.Group controlId='formPassword'>
-              <Form.Label>Password: </Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                   type='password'
                   value={password}

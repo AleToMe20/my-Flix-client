@@ -1,6 +1,8 @@
-import { Button, Card } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
+import { useState } from 'react';
 
 export const MovieCard = ({ movie, user, token, setUser }) => {
 

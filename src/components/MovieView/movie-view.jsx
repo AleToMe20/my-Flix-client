@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Button, Row, Col } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 import "../MovieView/movie-view.scss";
 
 export const MovieView = ({ movies }) => {

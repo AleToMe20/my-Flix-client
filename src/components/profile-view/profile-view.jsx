@@ -58,7 +58,7 @@ export const ProfileView = ({ token, setUser, movies }) => {
 
   const handleDeleteUser = () => {
     fetch(
-      `https://cp-movies-api-41b2d280c95b.herokuapp.com/users/${user.Username}`,
+      `https://my-flix-host.onrender.com/users/${user.Username}`,
       {
         method: "DELETE",
         headers: {

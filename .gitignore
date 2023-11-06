@@ -3,3 +3,5 @@ node_modules
 .parcel-cache
 dist
 pnpm-lock.yaml
+# Local Netlify folder
+.netlify

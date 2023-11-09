@@ -5,6 +5,7 @@ import { LoginView } from "../login-view/login-view.jsx";
 import { SignupView } from "../signup-view/signup-view.jsx";
 import { NavigationBar } from "../navigation-bar/navigation-bar.jsx";
 import { ProfileView } from "../profile-view/profile-view.jsx";
+import { SearchForm } from "../search-form/search-form.jsx";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -18,6 +19,16 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser);
   const storedToken = localStorage.getItem("token");
   const [token, setToken] = useState(storedToken);
+
+  const handleSearch = (searchTerm) => {
+    // Filter the movies based on the search term
+    const filteredMovies = movies.filter((movie) =>
+      movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    // Update the movies state with the filtered results
+    setMovies(filteredMovies);
+  };
 
   useEffect(() => {
     fetch("https://my-flix-host.onrender.com/movies", {
@@ -118,7 +129,6 @@ export const MainView = () => {
                 </>
               }
             />
-
             <Route
               path="/"
               element={
@@ -129,6 +139,11 @@ export const MainView = () => {
                     <Col>The list is absolutely empty!</Col>
                   ) : (
                     <>
+                      <Row>
+                        <Col>
+                          <SearchForm onSearch={handleSearch} />
+                        </Col>
+                      </Row>
                       {movies.map((movie) => (
                         <Col key={movie._id} md={3} className="gy-4 gx-4">
                           <MovieCard

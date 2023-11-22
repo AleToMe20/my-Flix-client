@@ -63,7 +63,7 @@ export const MainView = () => {
       .catch((error) => {
         console.error("Error fetching movies:", error.message);
       });
-  }, [setMovies]);
+  }, [setMovies, movies]);
 
   return (
     <BrowserRouter>
